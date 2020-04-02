@@ -6,22 +6,22 @@ class App extends React.Component {
     super()
     this.state={
       show: false,
-      name: 'Tasya',
-      age: '24'
+      name: 'Artem',
+      age: 'Puppidup'
     }
-    this.showState = this.showState.bind(this)
+    this.showText = this.showText.bind(this)
   }
-  showState() {
-    this.setState({show: !this.state.show})
+  showText() {
+    this.setState({show:!this.state.show})
   }
   render() {
     if (this.state.show) {
-      var text = <p>NAme: {this.state.name}, F: {this.state.age}</p>
+      var text = <p>@ {this.state.name} #{this.state.age}</p>
     }
     return(
       <div className="App">
-        <h1>{text}</h1>
-        <button onClick={this.showState}>{this.state.show ? 'CLOSE' : 'OPEN'}</button>
+        {text}
+        <button onClick={this.showText}>{this.state.show ? 'CLICK' : 'CLACK'}</button>
       </div>
     )
   }
